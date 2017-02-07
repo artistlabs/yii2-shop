@@ -17,7 +17,6 @@
             "name": "Vladimir kovalev",
             "email": "kv.artistlabs@gmail.com"
         },
-
     ],
     "minimum-stability": "dev",
     "require": {
