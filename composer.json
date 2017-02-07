@@ -1,18 +1,23 @@
 {
-    "name": "pistol88/yii2-shop",
-    "description": "yii2-shop it's a module for site shop backend",
+    "name": "artistlabs/yii2-shop",
+    "description": "forked from pistol88/yii2-shop it's a module for site shop backend",
     "keywords": ["yii2", "yii 2", "application", "backend", "crud", "shop", "module", "pistol88"],
-    "homepage": "https://github.com/pistol88/yii2-shop",
+    "homepage": "https://github.com/artistlabs/yii2-shop",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "source": "https://github.com/pistol88/yii2-shop"
+        "source": "https://github.com/artistlabs/yii2-shop"
     },
     "authors": [
         {
             "name": "Ilya Pistol",
             "email": "pistol88@gmail.com"
-        }
+        },
+        {
+            "name": "Vladimir kovalev",
+            "email": "kv.artistlabs@gmail.com"
+        },
+
     ],
     "minimum-stability": "dev",
     "require": {
