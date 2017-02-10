@@ -18,7 +18,7 @@ class Stock extends \yii\db\ActiveRecord
                 'class' => 'pistol88\field\behaviors\AttachFields',
             ],
             [
-                'class' => \voskobovich\manytomany\ManyToManyBehavior::className(),
+                'class' => \voskobovich\behaviors\ManyToManyBehavior::className(),
                 'relations' => [
                     'user_ids' => 'users',
                 ],
