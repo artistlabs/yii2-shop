@@ -12,16 +12,8 @@ class OutcomingController extends Controller
 {
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => $this->module->adminRoles,
-                    ]
-                ]
-            ],
+
+        $ret =  [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -30,6 +22,20 @@ class OutcomingController extends Controller
                 ],
             ],
         ];
+
+        if($this->module->isInternalAccessControl) {
+            $ret['access'] = [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => $this->module->adminRoles,
+                    ]
+                ]
+            ];
+        }
+
+        return $ret;
     }
 
     public function actionCreate()

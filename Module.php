@@ -14,6 +14,12 @@ class Module extends \yii\base\Module
     public $oneC = null;
     public $userModel = null;
     public $users = [];
+
+    /**
+     * @var bool
+     * использовать встроенную в модуль систему контроля доступа
+     */
+    public $isInternalAccessControl = true;
     public $menu = [
         [
             'label' => 'Товары',

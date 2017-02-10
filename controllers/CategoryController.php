@@ -13,8 +13,18 @@ class CategoryController extends Controller
 {
     public function behaviors()
     {
-        return [
-            'access' => [
+        $ret =  [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                    'edittable' => ['post'],
+                ],
+            ],
+        ];
+
+        if($this->module->isInternalAccessControl) {
+            $ret['access'] = [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -28,15 +38,9 @@ class CategoryController extends Controller
                         'roles' => ['?', '@'],
                     ]
                 ]
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                    'edittable' => ['post'],
-                ],
-            ],
-        ];
+            ];
+        }
+        return $ret;
     }
 
     public function actionIndex()

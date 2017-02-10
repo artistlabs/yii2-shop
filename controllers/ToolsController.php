@@ -9,8 +9,10 @@ class ToolsController extends Controller
 {
     public function behaviors()
     {
-        return [
-            'access' => [
+        $ret = [];
+
+        if($this->module->isInternalAccessControl) {
+            $ret['access'] = [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -18,8 +20,9 @@ class ToolsController extends Controller
                         'roles' => $this->module->adminRoles,
                     ]
                 ]
-            ],
-        ];
+            ];
+        }
+        return $ret;
     }
     
     public function actionSync()
